@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	body{
+		height: 1000px;
+	}
+	.item1{
+		position: absolute;
+		left: 0px;		
+		top: 1028px;
+	}
+	.item1:hover .lisa2{
+		display: block;
+		opacity: 1;
+		top: -111px;
+		left: 0px;
+		z-index: -1;
+		-moz-transition: all 0.8s linear;
+		-o-transition: all 0.8s linear;
+		-webkit-transition: all 0.8s linear;
+	}
+	.lisa2{
+		position: absolute;
+		top: -101px;
+		left: -20px;
+		opacity: 0;
+	}
+	.grey{
+		margin-left: 10px;
+		width: 90%;
+		height: 1500px;
+		background-color: #000;
+		z-index: 1;
+	}
+</style>
+	<div class="grey">
+		d
+	</div>
+	<div class="item1">
+		<div class="kust2">
+			<img src="https://forumstatic.ru/files/0019/3c/8c/67140.png?v=1">
+		</div>
+		<div class="lisa2">
+			<img src="https://forumstatic.ru/files/0019/3c/8c/62333.png?v=1">
+		</div>
+	</div>
+<script>
+	var  item = document.querySelectorAll('.item1');
+for(let i = 0; i < item.length;i++){
+    item[i].addEventListener('mouseenter',(e)=>{
+        let child = item[i].getElementsByClassName('lisa2')[0];
+        child.style.display = 'kontents';
+    })
+    item[i].addEventListener('mouseleave',()=>{
+        let child = item[i].getElementsByClassName('lisa2')[0];
+        child.style.display = 'none';
+    })
+}
+</script>
+</body>
+</html>
